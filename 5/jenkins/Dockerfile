@@ -7,7 +7,7 @@ RUN apt-get -qq update && apt-get -qq install sudo
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 RUN curl -sSL https://get.docker.com/ | sh
-RUN usermod -aG docker jenkins
+RUN groupadd docker && usermod -aG docker jenkins
 
 VOLUME [ "/var/lib/docker" ]
 
