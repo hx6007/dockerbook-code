@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER James Turnbull <james@example.com>
 ENV REFRESHED_AT 2016-06-01
 
+COPY sources.list /etc/apt/
 RUN apt-get -qq update
 RUN apt-get -qq install ruby ruby-dev build-essential nodejs
 RUN gem install --no-rdoc --no-ri jekyll -v 2.5.3
